@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Shorte: Short URL Generator by Riley Watkins</title>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js"></script>
+</head>
+<body>
+<h1>Shorte</h1>
+<h3>Short URL generator</h3>
+
+<div>
+    <input type="text" id="long_url"> <button id="submit">Go</button>
+</div>
+
+<div>
+<input type="text" id="short_url">
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#submit').click(function() {
+            var text = $('#long_url').val();
+            var d = {'long': text};
+            $.getJSON('/g', d, function(data) {
+                /*
+                if(data['short_url'].length > 0) {
+                    $('#short_url').text(data['short_url'];
+                }
+                */
+                console.log(data);
+            });
+        });
+    });
+</script>
+</body>
+</html>

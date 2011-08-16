@@ -1,0 +1,99 @@
+html {
+    text-align: center;
+}
+
+body {
+    background: #FFF;
+    color: #444;
+    font-family: Calibri, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+}
+
+div#container {
+    display: block;
+    font: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2em;
+    position: relative;
+    text-align: left;
+    width: 350px;
+}
+
+img#avatar {
+    display: inline-block;
+    float: left;
+    left: 0px;
+    margin-right: 25px;
+}
+
+div#content_body {
+    display: block;
+    overflow: hidden;
+    width: 245px;
+}
+
+/* general font settings */
+h1, h2, h3, h4, h5, h6 {
+    color: #111;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    padding: 0;
+    margin: 0 0 1em 0;
+}
+
+h1 {
+    font-size: 1.8em;
+}
+
+h1 a {
+    color: #555;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 1em 0;
+}
+
+h3 {
+    font-size: 1.2em;
+    margin: 1em 0;
+}
+
+p {
+    font-size: 1em;
+    margin: 1em 0;
+}
+
+a {
+    color: #07C;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+strong {
+    font-weight: 700;
+}
+
+h2.error_404 {
+    color: #E8272C;
+}
+
+/* contact list settings */
+ul.contact li {
+    margin-bottom: .75em;
+}
+
+ul.contact li > img {
+    padding-left: .5em;
+    margin-right: 1em;
+    vertical-align: middle;
+}
