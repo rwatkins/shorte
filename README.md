@@ -7,9 +7,9 @@ link for the example site to this README as soon as it's online.
 
 ## Stack
 
-Flask 0.7.2
-SQLAlchemy
-jQuery
+* Flask 0.7.2
+* SQLAlchemy
+* jQuery
 
 ## Contact
 
