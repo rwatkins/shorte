@@ -1,6 +1,5 @@
 from shorte import app
 from flaskext.sqlalchemy import SQLAlchemy
-import urlencoder
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/shorte.db'
 db = SQLAlchemy(app)
