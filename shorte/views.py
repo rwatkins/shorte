@@ -1,6 +1,7 @@
-from flask import render_template, request, Response
+from flask import render_template, request, Response, jsonify
+from models import db, Shorte
+import urlencoder as urlenc
 from shorte import app
-import json
 
 @app.route('/')
 def home():
@@ -8,10 +9,19 @@ def home():
 
 @app.route('/g')
 def generate():
-    data = {'short_url': 'HELLO'}
-    data = json.dumps(data)
-    response = Response()
-    response.status_code = 200
-    response.mimetype = 'application/json'
-    response.data = data
+    assert 'long_url' in request.args
+    long_url = request.args['long_url']
+    entry = Shorte.query.filter_by(long_url=long_url).first()
+    if entry == None:
+        entry = Shorte(long_url)
+        db.session.add(entry)
+        db.session.flush()
+        db.session.refresh(entry)
+        short_url = urlenc.encode_url(entry.id)
+        entry.short_url = short_url
+        db.session.commit()
+    response = jsonify(id=entry.id,
+            long_url=entry.long_url,
+            short_url=entry.short_url,
+            url_hits=entry.hits)
     return response

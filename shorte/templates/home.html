@@ -21,13 +21,11 @@
     $(document).ready(function() {
         $('#submit').click(function() {
             var text = $('#long_url').val();
-            var d = {'long': text};
+            var d = {'long_url': text};
             $.getJSON('/g', d, function(data) {
-                /*
                 if(data['short_url'].length > 0) {
-                    $('#short_url').text(data['short_url'];
+                    $('#short_url').val(data['short_url']);
                 }
-                */
                 console.log(data);
             });
         });
