@@ -1,4 +1,4 @@
-from flask import render_template, request, Response, jsonify
+from flask import render_template, request, Response, jsonify, redirect
 from models import db, Shorte
 import urlencoder as urlenc
 from shorte import app
@@ -21,5 +21,19 @@ def generate():
         entry.short_url = short_url
         db.session.commit()
     full_short = 'http://rw4.us/' + entry.short_url
-    response = jsonify(short_url=full_short, clicks=entry.hits)
+    response = jsonify(short_url=full_short, clicks=entry.clicks)
     return response
+
+@app.route('/<short_url>')
+def redirect_short(short_url):
+    entry = Shorte.query.filter_by(short_url=short_url).first()
+    if entry == None:
+        abort(404)
+    else:
+        entry.clicks += 1
+        db.session.commit()
+        return redirect(entry.long_url)
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template('404.html', url=request.url)
