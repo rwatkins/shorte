@@ -21,7 +21,5 @@ def generate():
         entry.short_url = short_url
         db.session.commit()
     full_short = 'http://rw4.us/' + entry.short_url
-    response = jsonify(id=entry.id,
-                       short_url=full_short,
-                       clicks=entry.hits)
+    response = jsonify(short_url=full_short, clicks=entry.hits)
     return response
