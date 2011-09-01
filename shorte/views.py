@@ -20,7 +20,8 @@ def generate():
         short_url = urlenc.encode_url(entry.id)
         entry.short_url = short_url
         db.session.commit()
+    full_short = 'http://rw4.us/' + entry.short_url
     response = jsonify(id=entry.id,
-                       short_url=entry.short_url,
-                       url_hits=entry.hits)
+                       short_url=full_short,
+                       clicks=entry.hits)
     return response
