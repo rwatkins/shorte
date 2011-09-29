@@ -2,8 +2,9 @@
 
 A short URL generator website.
 
-This is a project I created to learn the Flask Python framework. I'll add the
-link for the example site to this README as soon as it's online.
+This is a project I created to learn the Flask Python framework.
+
+The demo can be found at: http://rw4.us/
 
 ## Stack
 
@@ -11,6 +12,8 @@ link for the example site to this README as soon as it's online.
 * SQLite
 * SQLAlchemy (via Flask-SQLAlchemy extension - http://packages.python.org/Flask-SQLAlchemy/)
 * jQuery
+
+(Check requirements.txt for the full list of package requirements.)
 
 ## Contact
 
