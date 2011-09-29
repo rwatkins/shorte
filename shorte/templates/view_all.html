@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+<head>
+<title>All URLs</title>
+</head>
+<body>
+<table>
+{% for item in entries %}
+    <tr>
+        <td>{{ item.id }}</td>
+        <td>{{ item.short_url }}</td>
+        <td>{{ item.long_url }}</td>
+    </tr>
+{% endfor %}
+</table>

@@ -24,6 +24,11 @@ def generate():
     response = jsonify(short_url=full_short, clicks=entry.clicks)
     return response
 
+@app.route('/all')
+def view_all():
+    all_entries = Shorte.query.all()
+    return render_template('view_all.html', entries=all_entries)
+
 @app.route('/<short_url>')
 def redirect_short(short_url):
     entry = Shorte.query.filter_by(short_url=short_url).first()
